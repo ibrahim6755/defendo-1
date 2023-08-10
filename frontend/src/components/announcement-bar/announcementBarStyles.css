@@ -1,0 +1,22 @@
+.announcement-bar-wrapper {
+    background: #000;
+    padding: 12px 0 0 0;
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: 400;
+    font-style: normal;
+    font-family: 'Varela', sans-serif;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+}
+.announcement-bar-wrapper .row{
+    width: 99%;
+}
+.announcement-bar-wrapper p a {
+    text-decoration: none;
+    color: #fff;
+    font-size:smaller;
+    letter-spacing: 1.5px;
+}
+
