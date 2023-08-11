@@ -25,23 +25,23 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-const __dirname = path.resolve();
+// const __dirname = path.resolve();
 const publicPath = path.join(__dirname, 'public')
 
 const corsOptions ={
     origin:'*', 
     credentials:true          
  }
-  app.get("/*", function(req,res){
-    res.sendFile(
-        path.join(__dirname, 'build', 'index.html'),
-        function(err){
-            if(err){
-                res.status(500).send(err)
-            }
-        }
-    )
-  })
+//   app.get("/*", function(req,res){
+//     res.sendFile(
+//         path.join(__dirname, 'build', 'index.html'),
+//         function(err){
+//             if(err){
+//                 res.status(500).send(err)
+//             }
+//         }
+//     )
+//   })
 connectDB();
 
 app.use(cors());
