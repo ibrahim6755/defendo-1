@@ -25,7 +25,7 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 
 const app = express();
-// const __dirname = path.resolve();
+ const __dirname = path.resolve();
 const publicPath = path.join(__dirname, 'public')
 
 const corsOptions ={
