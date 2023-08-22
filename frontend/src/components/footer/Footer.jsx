@@ -24,6 +24,7 @@ function Footer() {
                         <li><Link to="/warranty-coverage">Warranty Coverage</Link></li>
                         <li><Link to="/return-refund">Returns & Refunds</Link></li>
                         <li><Link to="/return-refund"> Refund policy</Link></li>
+                        <li><Link to="/admin-panel">Account</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-4 col-sm-4 text-start">
@@ -45,6 +46,7 @@ function Footer() {
                         <li><Link to="/return-refund">Returns & Refunds</Link></li>
                         <li><Link to="/faq">Terms of Service</Link></li>
                         <li><Link to="/return-refund"> Refund policy</Link></li>
+                        <li><Link to="/admin-panel">Account</Link></li>
                     </ul>
                 </div>
                 <div className="col-md-4 col-sm-4 text-start shop">

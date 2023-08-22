@@ -21,6 +21,16 @@ export const authApi = createApi({
         logoutUser: builder.query({
             query: () => `account/Logout`,
         }),
+        getAllUsers : builder.query({
+            query : () => `users`,
+        }),
+        deleteUser : builder.mutation({
+            query: (id) => ({
+                url: `deleteUser/${id}`,
+                method: 'DELETE',
+            }),
+        })
+        
     })
 })
 
@@ -28,5 +38,7 @@ export const authApi = createApi({
 export const { 
     useLogoutUserQuery, 
     useRegisterUserMutation, 
-    useLoginUserMutation
+    useLoginUserMutation,
+    useGetAllUsersQuery,
+    useDeleteUserMutation
 } = authApi

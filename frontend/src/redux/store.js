@@ -16,6 +16,7 @@ import { newReleasesApi } from '../features/newReleases.js';
 import { ordersApi } from '../features/orders.js';
 import {searchApi} from '../features/search.js'
 import cartReducer from '../features/cartSlice.js'
+import authSlice from '../features/authSlice.js';
 
 
 export const store = configureStore({
@@ -36,7 +37,8 @@ export const store = configureStore({
     [newReleasesApi.reducerPath]: newReleasesApi.reducer,
     [ordersApi.reducerPath]: ordersApi.reducer,
     [searchApi.reducerPath]: searchApi.reducer,
-    cart: cartReducer
+    cart: cartReducer,
+    authSlice : authSlice 
   }
   ,
   middleware: (getDefaultMiddleware) =>

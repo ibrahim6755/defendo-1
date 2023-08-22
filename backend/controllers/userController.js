@@ -14,7 +14,8 @@ export const regsiterUser = async(req, res, next)=> {
         await User.create(user)
         res.json({
             message : 'The user has been registered',
-            user : user
+            user : user,
+            status : "success",
         })
     } catch (error) {
         next(error)
@@ -68,6 +69,27 @@ export const logoutUser = async(req, res, next)=>{
         res.cookie("loginToken", "", { expires: new Date(0), httpOnly: true }).json({
             message : 'You have been Logged out'
         })
+    } catch (error) {
+        next(error)
+    }
+}
+export const getAllUsers = async(req, res, next)=>{
+
+    try {
+        const users = await User.find();
+
+        res.json(users)
+    } catch (error) {
+        next(error)
+    }
+}
+export const deleteUserById = async(req, res, next)=>{
+    const {id} = req.params
+
+    try {
+        await User.findByIdAndDelete(id)
+        res.json({ message: "user has been Deleted" })
+
     } catch (error) {
         next(error)
     }

@@ -3,12 +3,16 @@ import './NavBarStyles.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useLocation } from 'react-router-dom'
 import Cart from '../cart/Cart';
-
+import { logOut, selectCurrentToken } from '../../features/authSlice';
 
 
 function NavBar() {
     const cartItems = useSelector((state) => state.cart);
-    
+    const token = useSelector(selectCurrentToken)
+    const location = useLocation();
+    const dispatch = useDispatch()
+
+
     const calculateTotalPrice = () => {
         let totalPrice = 0;
         cartItems.forEach((item) => {
@@ -17,18 +21,17 @@ function NavBar() {
         return totalPrice;
     };
 
-    const location = useLocation(); 
 
-  useEffect(() => {
-    const offCanvas = document.getElementById('staticBackdrop');
-    if (offCanvas) {
-      const offCanvasCloseButton = offCanvas.querySelector('.btn-close');
-      if (offCanvasCloseButton) {
+    useEffect(() => {
+        const offCanvas = document.getElementById('staticBackdrop');
+        if (offCanvas) {
+            const offCanvasCloseButton = offCanvas.querySelector('.btn-close');
+            if (offCanvasCloseButton) {
 
-        offCanvasCloseButton.click();
-      }
-    }
-  }, [location]);
+                offCanvasCloseButton.click();
+            }
+        }
+    }, [location]);
 
 
     return (
@@ -40,9 +43,18 @@ function NavBar() {
                 <div className="col-md-4 col-sm-3 col-lg-4 left-nav">
                     <ul className=" mb-md-0 m-0">
                         <li className='list-style-none mx-2 person account-mob '>
-                            <Link className='text-decor' aria-current="page" to="/account/login">
-                                <i className="bi bi-person fs-3 fw-bold text-dark"></i>
-                            </Link>
+                            {
+                                token ?
+                                    <Link className='text-decor' aria-current="page" to="/" onClick={() => { dispatch(logOut()) }}>
+                                        <i className="bi bi-power fs-3 fw-bold text-dark"></i>
+                                    </Link>
+                                    :
+                                    <Link className='text-decor' aria-current="page" to="/account/login">
+                                        <i className="bi bi-person fs-3 fw-bold text-dark"></i>
+                                    </Link>
+                            }
+
+
                         </li>
                         <li className='list-style-none hamburger'>
                             <Link className="btn  d-md-block text-decor" data-bs-toggle="offcanvas" to="#offcanvasExample" role="button" aria-controls="offcanvasExample" >
@@ -82,9 +94,17 @@ function NavBar() {
                                 <Cart />
                             </div>
                             <div className="offcanvas-footer ">
-                                <div className='total-price p-2'>
-                                    <Link to="/checkout"><h5 className='m-0 p-1'> Proceed to Checkout: {calculateTotalPrice()} </h5></Link>
-                                </div>
+                                {
+                                    cartItems?.length == 0 ?
+                                        <div className='total-price p-2'>
+                                            <Link to="/"><h5 className='m-0 p-1'> Proceed to Checkout: {calculateTotalPrice()} </h5></Link>
+                                        </div>
+                                        :
+                                        <div className='total-price p-2'>
+                                            <Link to="/checkout"><h5 className='m-0 p-1'> Proceed to Checkout: {calculateTotalPrice()} </h5></Link>
+                                        </div>
+                                }
+
                             </div>
                         </div>
                     </ul>

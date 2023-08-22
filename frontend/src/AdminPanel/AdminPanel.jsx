@@ -2,12 +2,18 @@ import { useState } from 'react'
 import './AdminPanelStyles.css'
 import adminavatar from '../imgs/adminavatar.png'
 import { Link } from 'react-router-dom';
-function AdminPanel() {
-  const [selectedImage, setSelectedImage] = useState(null);
+import { useDispatch } from 'react-redux';
+import { logOut } from '../features/authSlice';
 
+
+
+function AdminPanel() {
+
+  const [selectedImage, setSelectedImage] = useState(null);
+  const dispatch = useDispatch()
   const handleImageUpload = (event) => {
-    const file = event.target.files[0];
-    const reader = new FileReader();
+  const file = event.target.files[0];
+  const reader = new FileReader();
 
     reader.onload = (e) => {
       setSelectedImage(e.target.result);
@@ -24,7 +30,7 @@ function AdminPanel() {
           <h4 className='text-center fw-bold'>Admin</h4>
           <ul className='m-0 p-0 '>
             <li className='p-2 my-4'><a href="">Profile</a></li>
-            <li className='p-2 my-4'><a href="">Add Products</a></li>
+            <li className='p-2 my-4'><Link to='users'>Users</Link></li>
             <li className='p-2 my-4'><Link to='orders'>Orders</Link></li>
           </ul>
         </div>
@@ -58,7 +64,7 @@ function AdminPanel() {
           </div>
 
           <div className="signout mx-5">
-            <button className='w-100 p-2'>Sign Out</button>
+            <button onClick={() => dispatch(logOut())} className='w-100 p-2'>Log Out</button>
           </div>
         </div>
       </div>

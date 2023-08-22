@@ -25,23 +25,15 @@ import path from 'path';
 import cookieParser from 'cookie-parser';
 
 const app = express();
- const __dirname = path.resolve();
-const publicPath = path.join(__dirname, '/public')
+const __dirname = path.resolve();
+const publicPath = path.join(__dirname, 'public')
 
 const corsOptions ={
     origin:'*', 
     credentials:true          
  }
-//   app.get("/*", function(req,res){
-//     res.sendFile(
-//         path.join(__dirname, 'build', 'index.html'),
-//         function(err){
-//             if(err){
-//                 res.status(500).send(err)
-//             }
-//         }
-//     )
-//   })
+  
+
 connectDB();
 
 app.use(cors());
@@ -70,7 +62,7 @@ app.use('/', allProductRoutes);
 
 app.use(error);
 
-const port = process.env.PORT || 7000;
+const port = 7000;
 
 app.listen(port, ()=>{
     console.log(`The server is listening at port --------- ${port}`);

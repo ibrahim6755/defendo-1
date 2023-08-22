@@ -6,7 +6,7 @@ import AnnouncementBar from './components/announcement-bar/AnnouncementBar';
 import NavBar from './components/NavBar/NavBar';
 import Footer from './components/footer/Footer';
 import NewReleases from './components/pages/NewReleases/NewReleases';
-import Grid4 from './components/grid/Grid4';
+// import Grid4 from './components/grid/Grid4';
 import Chains from './components/pages/Chains/Chains';
 import Rings from './components/pages/Rings/Rings';
 import Bracelets from './components/pages/Bracelets/Bracelets';
@@ -28,6 +28,19 @@ import LimitedDropsDescription from './components/pages/limited Drop Description
 import NewReleasesDescription from './components/pages/NewReleases Description/NewReleasesDescription';
 import RingsProduct from './AdminPanel/RingsProduct';
 import Orders from './AdminPanel/Orders';
+import PrivateRoutes from './features/PrivateRoutes';
+import CheckoutCart from './components/CheckoutCart/CheckoutCart'
+
+import BraceletGrid from './components/braceletGrid/BraceletGrid';
+import RingGrid from './components/ringGrid/RingGrid';
+import PendantGrid from './components/pendantGrid/ChainGrid';
+import RingSortingBar from './components/ringSortingBar/RingSortingBar';
+import BraceletSortingBar from './components/braceletSortingBar/BraceletSortingBar';
+
+import AuthorisedRoutes from './features/AuthorizedRoutes';
+import Users from './AdminPanel/Users';
+
+
 
 
 
@@ -41,7 +54,13 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/contact' element={<ContactUs />} />
         <Route path='/new-releases' element={<NewReleases />} />
-        <Route path='/grid4*4' element={<Grid4 />} />
+        {/* <Route path='/grid4*4' element={<Grid4 />} /> */}
+        <Route path='/bracelet-grid' element={<BraceletGrid />} />
+        <Route path='/ring-grid' element={<RingGrid />} />
+        <Route path='/pendant-grid' element={<PendantGrid />} />
+        <Route path='/ring-sorting' element={<RingSortingBar />} />
+        <Route path='/bracelet-sorting' element={<BraceletSortingBar />} />
+        
         <Route path='/Pendants' element={<Chains />} />
         <Route path='/chains' element={<Chains />} />
         <Route path='/Rings' element={<Rings />} />
@@ -52,32 +71,41 @@ function App() {
         <Route path='/chain-description/:id' element={<ChainDescription />} />
         <Route path='/account/login' element={<Account />} />
         <Route path='/account/signup' element={<SignUp />} />
+        
+        <Route element={<PrivateRoutes />}>
         <Route path='/checkout' element={<Checkout />} />
+        </Route>
+        
         <Route path='/coming-soon' element={<ComingSoon />} />
         <Route path='/warranty-coverage' element={<WarrantyCoverage />} />
         <Route path='/return-refund' element={<ReturnRefund />} />
         <Route path='/limited-drops' element={<LimitedDrops />} />
 
-        <Route path='/Admin-panel' element={<AdminPanel/>} />
-        <Route path='/faq' element={<FAQs/>} />
-        <Route path='/product-description/:id' element={<ProductDescription/>} />
-        <Route path='/bracelet-description/:id' element={<BraceletDescription/>} />
+        <Route element={<AuthorisedRoutes />}>
+        <Route path='/Admin-panel' element={<AdminPanel />} />
+        <Route path='/admin-panel/orders' element={<Orders />} />
+        <Route path='/admin-panel/users' element={<Users />} />
+        </Route>
+
+        <Route path='/faq' element={<FAQs />} />
+        <Route path='/product-description/:id' element={<ProductDescription />} />
+        <Route path='/bracelet-description/:id' element={<BraceletDescription />} />
         <Route path='/chain-description/:id' element={<ChainDescription />} />
         <Route path='/limitedDrop-description/:id' element={<LimitedDropsDescription />} />
         <Route path='/newReleases-description/:id' element={<NewReleasesDescription />} />
-        <Route path='/account/login' element={<Account/>} />
-        <Route path='/account/signup' element={<SignUp/>} />
-        <Route path='/coming-soon' element={<ComingSoon/>} />
-        <Route path='/checkout' element={<Checkout/>} />
-        <Route path='/checkout-success' element={<CheckoutSuccess/>} />
-        <Route path='/warranty-coverage' element={<WarrantyCoverage/>} />
-        <Route path='/return-refund' element={<ReturnRefund/>} />
-        <Route path='/limited-drops' element={<LimitedDrops/>} />
+        <Route path='/account/login' element={<Account />} />
+        <Route path='/account/signup' element={<SignUp />} />
+        <Route path='/coming-soon' element={<ComingSoon />} />
+        <Route path='/checkout' element={<Checkout />} />
+        <Route path='/checkout-success' element={<CheckoutSuccess />} />
+        <Route path='/warranty-coverage' element={<WarrantyCoverage />} />
+        <Route path='/return-refund' element={<ReturnRefund />} />
+        <Route path='/limited-drops' element={<LimitedDrops />} />
         <Route path='/ring-product' element={<RingsProduct />} />
-        <Route path='/admin-panel/orders' element={<Orders />} />
 
         
-        
+
+        <Route path='/checkout-cart' element={<CheckoutCart />} />
 
 
       </Routes>

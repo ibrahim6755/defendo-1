@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.route('/newOrder').post(createOrder);
 
-router.route('/orders').get(isAuthenticatedUser, GetOrders);
+router.route('/orders').get(GetOrders);
 
 router.route('/deleteOrder/:id').delete(deleteOrder);
 

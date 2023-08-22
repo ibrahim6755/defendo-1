@@ -9,8 +9,11 @@ import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 function Checkout() {
 
-    const navigate = useNavigate();
+
     const form = useRef();
+
+
+    const navigate = useNavigate();
 
     const cartItems = useSelector((state) => state.cart);
 
@@ -178,6 +181,7 @@ function Checkout() {
                                         <label className="form-check-label" htmlFor="paymentMethod">Cash on delivery</label>
                                     </div>
 
+
                                     <div className="col-12">
                                         <label htmlFor="phoneNumber" className="form-label">Phone Number</label>
                                         <Field className="form-control" as={TextField} type="text" name="phoneNumber" placeholder="Phone Number" required />
@@ -202,27 +206,18 @@ function Checkout() {
                                                         <span className="text-body-secondary">Rs {item.price}</span>
 
                                                     </li>
-                                                ))
-                                            }
-                                            <li className="list-group-item d-flex justify-content-between">
-                                                <h6 className="my-0">Delivery Charges</h6>
-                                                <small className="text-body-secondary">Rs 99</small>
-
-                                            </li>
-                                            <li className="list-group-item d-flex justify-content-between">
-                                                <span>Total (PKR)</span>
-                                                <strong>Rs {calculateTotalPrice()}</strong>
-
-                                            </li>
-                                        </ul>
+                                                    ))
+                                                }
+                                            </ul>
                                     </div>
-                                    <div className="col-12 form-check mb-3 py-3">
+                                    <div className="col-12 form-check mb-3 py-3 ms-4">
                                         <Field type="checkbox" id="termsAndConditions" name="termsAndConditions" className="form-check-input" required />
                                         <label className="form-check-label" htmlFor="termsAndConditions">I agree to the terms and conditions</label>
                                         {errors.orderNotes && <ErrorMessage name="termsAndConditions" component="div" className="invalid-feedback" />}
                                     </div>
 
-                                    <button className='login-btn my-3 p-2 py-2' type="submit" >Place your Order!</button>
+                                    <button className='login-btn my-3 p-2 py-2 m-0 rounded' type="submit" >Place your Order!</button>
+
 
                                 </div>
                             </div>
@@ -239,4 +234,4 @@ function Checkout() {
 
 }
 
-export default Checkout;
+export default Checkout;

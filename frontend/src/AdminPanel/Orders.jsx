@@ -9,8 +9,8 @@ const Orders = () => {
     const [expandedOrderId, setExpandedOrderId] = useState(null);
 
 
-    const handleDelete = (orderId) => {
-        deleteOrder(orderId);
+    const handleDelete = async (orderId) => {
+        await deleteOrder(orderId);
         refetch()
     };
 
@@ -31,7 +31,7 @@ const Orders = () => {
             orders.map((order) => (
                 <div key={order._id}>
 
-                    <span>Name: </span><strong className='bg-dark text-white py-2 px-3'>{order.firstName}</strong>
+                    <span className='fw-bold'>Name: {order.firstName}</span>
                     <button className='btn btn-primary bg-transparent w-25 border-0' onClick={() => setExpandedOrderId(expandedOrderId === order._id ? null : order._id)}>
                         {expandedOrderId === order._id ? <i class="bi bi-chevron-up text-dark fs-4 fw-bold"></i> : <i class="bi bi-chevron-down fs-4 text-dark fw-bold"></i>}
                     </button>
