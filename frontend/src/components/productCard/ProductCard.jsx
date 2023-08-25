@@ -23,19 +23,8 @@ function ProductCard({ data: ProductData, routeName }) {
                     <img src={baseUrl + ProductData?.img} className="card-img-top" alt="" height='' />
                 </Link>
                 <div className="card-body">
-                    <h5 className="card-title text-center">{ProductData?.name}</h5>
-                    <div className='mt-2 about'>
-                        <div className="icons mx-2">
-                            <img className="star" src={reviewStar} alt="" />
-                            <img className="star" src={reviewStar} alt="" />
-                            <img className="star" src={reviewStar} alt="" />
-                            <img className="star" src={reviewStar} alt="" />
-                            <img className="star" src={reviewStar} alt="" />
-                        </div>
-                        <div className="text">
-                            <p className='review'>1 review</p>
-                        </div>
-                    </div>
+                    <h5 className="card-title text-center fw-bold">{ProductData?.name}</h5>
+                    
                     <p className="card-text text-center price">{ProductData?.price}pkr</p>
                 </div>
             </div>

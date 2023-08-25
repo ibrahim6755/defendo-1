@@ -207,6 +207,20 @@ function ProductDescription() {
                                             scratch the metal or damage any stones.</p> </div>
                                 </div>
                             </div>
+                            <div class="accordion-item">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                                        Size guides 
+                                    </button>
+                                </h2>
+                                <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                                    <div class="accordion-body">
+                                        <p> 1. You can measure your ring size by using a piece of string or paper. Wrap it around your finger and mark where it overlaps. Then, measure the length of the string/paper and compare it to a ring size chart.</p>
+                                        <p>2. You can also measure your ring size by using a ring that already fits you well. Place the ring on a ruler and measure the inside diameter. Then, compare the measurement to a ring size chart to find your size.</p> 
+                                        <p>3. You can also measure your ring size by using a ring sizer app on your smartphone. Just follow the instructions on the app and it will help you find your ring size.</p> 
+                                        </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

@@ -72,9 +72,9 @@ function App() {
         <Route path='/account/login' element={<Account />} />
         <Route path='/account/signup' element={<SignUp />} />
         
-        <Route element={<PrivateRoutes />}>
+        
         <Route path='/checkout' element={<Checkout />} />
-        </Route>
+        
         
         <Route path='/coming-soon' element={<ComingSoon />} />
         <Route path='/warranty-coverage' element={<WarrantyCoverage />} />

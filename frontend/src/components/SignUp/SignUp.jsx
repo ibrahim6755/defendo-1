@@ -19,6 +19,7 @@ function SignUp() {
     lastName: '',
     email: '',
     password: '',
+    confirmPassword: '',
   }
 
   const validationSchema = Yup.object().shape({
@@ -26,10 +27,15 @@ function SignUp() {
     lastName: Yup.string().required('Last name is required'),
     email: Yup.string().email('Invalid email address').required('Email is required'),
     password: Yup.string().min(6, 'Password must be at least 6 characters').required('Password is required'),
+    confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match').required('Confirm password is required'),
   });
 
   const handleSubmit = async (values, { resetForm }) => {
-
+    
+    if (values.password !== values.confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
     const newUser = values
 
     const result = await registerUser(newUser)
@@ -66,6 +72,8 @@ function SignUp() {
                     {errors.email && touched.email && <ErrorMessage className="error-message" name="email" component="div" />}
                     <Field className='password p-1 my-2' type="password" placeholder='Password' name="password" />
                     {errors.password && touched.password && <ErrorMessage className="error-message" name="password" component="div" />}
+                    <Field className='confirm-password p-1 my-2' type="password" placeholder='Confirm Password' name="confirmPassword" />
+                    {errors.confirmPassword && touched.confirmPassword && <ErrorMessage className="error-message" name="confirmPassword" component="div" />}
                     <button className='signup-btn mb-3 p-2 py-2 my-1' type="submit">create my account</button>
                     <p className='text-center'>Already had account?<Link to="/account/login" className='mx-1'>Login</Link> </p>
                   </div>

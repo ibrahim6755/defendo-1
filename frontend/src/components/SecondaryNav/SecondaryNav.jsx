@@ -50,24 +50,7 @@ function SecondaryNav() {
           <div className="col-md-8 col-lg-8 mid col-sm-10">
             <ul className='p-0 my-2 parent'>
 
-              <Link to="/coming-soon" className='text-decor noeffect'><li className='list-none text-uppercase me-4 d-none d-md-block p-1' >The Resurrection</li></Link>
-              <li className='list-none '>
-                <div className="dropdown1">
-                  <div className='dropdown1-btn btn text-dark text-uppercase'>
-                    All Collections <i className="bi bi-chevron-down down-arrow mx-1"></i>
-                  </div>
-                  <div className="dropmenu1">
-                    <ul className='p-1'>
-                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Jackets - coming soon </Link></li>
-                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies - coming soon </Link></li>
-                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts - coming soon </Link></li>
-                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits - coming soon</Link></li>
-                    </ul>
-                  </div>
-                </div>
-              </li>
-
-              <li className='list-none '>
+            <li className='list-none '>
                 <div className="dropdown2">
                   <div className='dropdown2-btn btn text-dark text-uppercase'>
                     category  <i className="bi bi-chevron-down down-arrow mx-1"></i>
@@ -78,10 +61,10 @@ function SecondaryNav() {
                         <ul className='p-1'>
                           <h5 className='text-uppercase fs-6 fw-bold p-1 mb-3 fs-5'>outwear</h5>
 
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts</Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">T-shirts  </Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies</Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits</Link></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">T-shirts</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies</Link> <span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits</Link> <span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
                         </ul>
                       </div>
                       <div className="col-md-4 mid-col">
@@ -99,10 +82,9 @@ function SecondaryNav() {
                         <ul className='p-1'>
                           <h5 className='text-uppercase fs-6 fw-bold p-1 mb-3 fs-5'> pants</h5>
 
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to=''>Trousers</Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to=''>Shorts  </Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to=''>sweatpants</Link></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to=''></Link></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Trousers</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Shorts  </Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>sweatpants</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
                         </ul>
 
                       </div>
@@ -110,6 +92,24 @@ function SecondaryNav() {
                   </div>
                 </div>
               </li>
+              <li className='list-none '>
+                <div className="dropdown1">
+                  <div className='dropdown1-btn btn text-dark text-uppercase'>
+                    All Collections <i className="bi bi-chevron-down down-arrow mx-1"></i>
+                  </div>
+                  <div className="dropmenu1">
+                    <ul className='p-1'>
+                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Jackets - coming soon </Link></li>
+                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies - coming soon </Link></li>
+                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts - coming soon </Link></li>
+                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits - coming soon</Link></li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <Link to="/coming-soon" className='text-decor noeffect'><li className='list-none text-uppercase me-4 d-none d-md-block p-1' >The Resurrection</li></Link>
+
+              
 
               <li className='list-none '>
                 <div className="dropdown3">

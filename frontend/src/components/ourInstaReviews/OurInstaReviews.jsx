@@ -32,7 +32,7 @@ function OurInstaReviews() {
                     <div className="col-md-6 video">
                         <div className="row row-video py-3">
                             <div className="col-md-6 p-0">
-                                <video src={instaVideo} className="" controls loop autoPlay>
+                                <video src={instaVideo} className="" controls muted >
                                     
                                             Your browser does not support the video tag.
                                         </video>
