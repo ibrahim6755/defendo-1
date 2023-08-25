@@ -12,6 +12,7 @@ import FAQRoutes from './routes/FAQRoutes.js'
 import ringRoutes from './routes/ringRoutes.js'
 import braceletRoutes from './routes/braceletRoutes.js'
 import chainRoutes from './routes/chainRoutes.js'
+import pendantRoutes from './routes/pendantRoutes.js'
 import newReleaseRoutes from './routes/newReleaseRoutes.js'
 import limitedDropRoutes from './routes/limitedDropRoutes.js'
 import stripeRoutes from './routes/stripeRoutes.js'
@@ -53,6 +54,7 @@ app.use('/', FAQRoutes);
 app.use('/', ringRoutes);
 app.use('/', braceletRoutes);
 app.use('/', chainRoutes);
+app.use('/', pendantRoutes);
 app.use('/', newReleaseRoutes);
 app.use('/', limitedDropRoutes);
 app.use('/', stripeRoutes);
