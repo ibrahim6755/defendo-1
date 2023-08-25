@@ -5,12 +5,12 @@ import { useGetChainDetailsQuery } from '../../features/chains';
 import BarLoader from "react-spinners/BarLoader";
 import ChainSortingBar from '../chainsSortingBar/ChainSortingBar';
 
-function PendantGrid() {
+function ChainGrid() {
     const [chainImages, setChainImages] = useState([]);
     const { data: chianImagesData } = useGetChainDetailsQuery()
     const routeName = 'chain-description'
     const [loading, setLoading] = useState(false)
-    const heading = 'Pendants'
+    const heading = 'Chains'
 
 
     useEffect(() => {
@@ -48,4 +48,4 @@ function PendantGrid() {
     )
 }
 
-export default PendantGrid
+export default ChainGrid

@@ -26,6 +26,7 @@ import CheckoutSuccess from './components/Checkout success/CheckoutSuccess'
 import AdminPanel from './AdminPanel/AdminPanel';
 import LimitedDropsDescription from './components/pages/limited Drop Description/LimitedDropsDescription'
 import NewReleasesDescription from './components/pages/NewReleases Description/NewReleasesDescription';
+import PendantDescription from './components/pages/pendants/PendantDescription';
 import RingsProduct from './AdminPanel/RingsProduct';
 import Orders from './AdminPanel/Orders';
 import PrivateRoutes from './features/PrivateRoutes';
@@ -33,12 +34,14 @@ import CheckoutCart from './components/CheckoutCart/CheckoutCart'
 
 import BraceletGrid from './components/braceletGrid/BraceletGrid';
 import RingGrid from './components/ringGrid/RingGrid';
-import PendantGrid from './components/pendantGrid/ChainGrid';
+import ChainGrid from './components/chainGrid/ChainGrid';
 import RingSortingBar from './components/ringSortingBar/RingSortingBar';
 import BraceletSortingBar from './components/braceletSortingBar/BraceletSortingBar';
 
 import AuthorisedRoutes from './features/AuthorizedRoutes';
 import Users from './AdminPanel/Users';
+import Pendants from './components/pages/pendants/Pendants';
+import PendantGrid from './components/pages/pendants/PendantGrid';
 
 
 
@@ -58,10 +61,11 @@ function App() {
         <Route path='/bracelet-grid' element={<BraceletGrid />} />
         <Route path='/ring-grid' element={<RingGrid />} />
         <Route path='/pendant-grid' element={<PendantGrid />} />
+        <Route path='/chain-grid' element={<ChainGrid />} />
         <Route path='/ring-sorting' element={<RingSortingBar />} />
         <Route path='/bracelet-sorting' element={<BraceletSortingBar />} />
         
-        <Route path='/Pendants' element={<Chains />} />
+        <Route path='/Pendants' element={<Pendants />} />
         <Route path='/chains' element={<Chains />} />
         <Route path='/Rings' element={<Rings />} />
         <Route path='/Bracelets' element={<Bracelets />} />
@@ -93,6 +97,7 @@ function App() {
         <Route path='/chain-description/:id' element={<ChainDescription />} />
         <Route path='/limitedDrop-description/:id' element={<LimitedDropsDescription />} />
         <Route path='/newReleases-description/:id' element={<NewReleasesDescription />} />
+        <Route path='/pendant-description/:id' element={<PendantDescription />} />
         <Route path='/account/login' element={<Account />} />
         <Route path='/account/signup' element={<SignUp />} />
         <Route path='/coming-soon' element={<ComingSoon />} />

@@ -1,21 +1,21 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import Modal from 'react-modal';
-import { Link, useParams } from 'react-router-dom'
-import reviewStar from '../../../imgs/reviewStar.png'
-import QuantitySelector from '../../quantitySelector/QuantitySelector'
-import { useDispatch, useSelector } from 'react-redux';
-import { addToCart } from '../../../features/cartSlice';
 import '../Product description/ProductDescriptionStyles.css'
-import './chainDescriptionStyles.css'
-import { useGetChainDetailsByIdQuery } from './../../../features/chains'
+import { Link, useParams } from 'react-router-dom'
+import QuantitySelector from '../../quantitySelector/QuantitySelector'
+import { useGetPendantDetailsByIdQuery } from '../../../features/pendants';
+import { useDispatch} from 'react-redux';
+import { addToCart } from '../../../features/cartSlice';
 import BarLoader from "react-spinners/BarLoader";
+import { useEffect } from 'react';
 import { handleScroll } from '../../../animation';
 
-function ChainDescription() {
+
+function PendantDescription() {
 
     const [selectedImage, setSelectedImage] = useState(null);
     const { id } = useParams();
-    const { data: productData } = useGetChainDetailsByIdQuery(id)
+    const { data: productData } = useGetPendantDetailsByIdQuery(id)
     const baseUrl = 'http://localhost:7000';
     const dispatch = useDispatch();
     const [quantity, setQuantity] = useState(1);
@@ -178,7 +178,7 @@ function ChainDescription() {
                             <div class="accordion-item">
                                 <h2 class="accordion-header">
                                     <button class="accordion-button collapsed text-uppercase" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                         product care
+                                        product care
                                     </button>
                                 </h2>
                                 <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -216,4 +216,4 @@ function ChainDescription() {
     )
 }
 
-export default ChainDescription;
+export default PendantDescription;

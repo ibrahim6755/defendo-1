@@ -1,17 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import './SecondaryNavStyles.css';
-import { Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { useSearchProductsQuery } from '../../features/search';
-
+import { selectCurrentToken } from '../../features/authSlice';
+import { useSelector } from 'react-redux';
 function SecondaryNav() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
   const url = `products?search=${searchQuery}`
   const { data, error, isLoading } = useSearchProductsQuery(url)
-
+  const token = useSelector(selectCurrentToken)
   const handleSearch = async () => {
 
     try {
@@ -38,8 +39,8 @@ function SecondaryNav() {
       }
     }
   }, [window.location.pathname]);
-  
-   
+
+
 
   return (
 
@@ -50,7 +51,7 @@ function SecondaryNav() {
           <div className="col-md-8 col-lg-8 mid col-sm-10">
             <ul className='p-0 my-2 parent'>
 
-            <li className='list-none '>
+              <li className='list-none '>
                 <div className="dropdown2">
                   <div className='dropdown2-btn btn text-dark text-uppercase'>
                     category  <i className="bi bi-chevron-down down-arrow mx-1"></i>
@@ -61,10 +62,10 @@ function SecondaryNav() {
                         <ul className='p-1'>
                           <h5 className='text-uppercase fs-6 fw-bold p-1 mb-3 fs-5'>outwear</h5>
 
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">T-shirts</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies</Link> <span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits</Link> <span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Shirts</Link><span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">T-shirts</Link><span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Hoodies</Link> <span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/coming-soon">Track suits</Link> <span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
                         </ul>
                       </div>
                       <div className="col-md-4 mid-col">
@@ -72,7 +73,7 @@ function SecondaryNav() {
                         <ul className='p-1'>
                           <h5 className='text-uppercase fs-6 fw-bold p-1 mb-3 fs-5'>Accessories</h5>
 
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/chains">Pendants</Link></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/Pendants">Pendants</Link></li>
                           <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/chains">Chains </Link></li>
                           <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/Rings">Rings </Link></li>
                           <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/Bracelets">Bracelets</Link></li>
@@ -82,9 +83,9 @@ function SecondaryNav() {
                         <ul className='p-1'>
                           <h5 className='text-uppercase fs-6 fw-bold p-1 mb-3 fs-5'> pants</h5>
 
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Trousers</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Shorts  </Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
-                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>sweatpants</Link><span style={{fontSize : '10px', textDecoration : 'underline'}} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Trousers</Link><span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4 '>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>Shorts  </Link><span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to='/coming-soon'>sweatpants</Link><span style={{ fontSize: '10px', textDecoration: 'underline' }} className='text-dark p-1 ms-2 rounded-1 ms-4'>Coming Soon</span></li>
                         </ul>
 
                       </div>
@@ -109,7 +110,7 @@ function SecondaryNav() {
               </li>
               <Link to="/coming-soon" className='text-decor noeffect'><li className='list-none text-uppercase me-4 d-none d-md-block p-1' >The Resurrection</li></Link>
 
-              
+
 
               <li className='list-none '>
                 <div className="dropdown3">
@@ -122,7 +123,12 @@ function SecondaryNav() {
                       <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/faq">FAQs</Link></li>
                       <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/warranty-coverage">Warranty Coverage</Link></li>
                       <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/return-refund">Returns & Refunds</Link></li>
-                      <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/account/login">Account</Link></li>
+                      {
+                        token ?
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to=""></Link></li>
+                          :
+                          <li className='list-none m-2'><Link className='text-decor fs-6 text-dark text-uppercase' to="/account/login">Account</Link></li>
+                      }
                     </ul>
                   </div>
                 </div>
@@ -134,7 +140,7 @@ function SecondaryNav() {
 
             <button class="btn w-25 p-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><i className="bi bi-search fs-5 mx-1 text-dark"></i></button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-            <button type="button" class="btn-close d-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              <button type="button" class="btn-close d-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
               <div class="offcanvas-header">
               </div>
               <div class="offcanvas-body">

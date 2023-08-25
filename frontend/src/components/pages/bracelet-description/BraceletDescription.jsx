@@ -11,7 +11,7 @@ import BarLoader from "react-spinners/BarLoader";
 import { handleScroll } from '../../../animation';
 
 
-function ProductDescription() {
+function BraceletDescription() {
 
     const [selectedImage, setSelectedImage] = useState(null);
     const { id } = useParams();
@@ -200,4 +200,4 @@ function ProductDescription() {
     )
 }
 
-export default ProductDescription
+export default BraceletDescription

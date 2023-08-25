@@ -32,7 +32,7 @@ function Footer() {
                     <ul>
                         <li><Link to="/Bracelets">Bracelets</Link></li>
                         <li><Link to="/chains">Chains</Link></li>
-                        <li><Link to="/chains">Pendants</Link></li>
+                        <li><Link to="/Pendants">Pendants</Link></li>
                         <li><Link to="/Rings">Rings</Link></li>
                     </ul>
                 </div>
@@ -54,7 +54,7 @@ function Footer() {
                     <ul>
                         <li><Link to="/Bracelets">Bracelets</Link></li>
                         <li><Link to="/chains">Chains</Link></li>
-                        <li><Link to="/chains">Pendants</Link></li>
+                        <li><Link to="/Pendants">Pendants</Link></li>
                         <li><Link to="/Rings">Rings</Link></li>
                     </ul>
                 </div>
